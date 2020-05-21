@@ -3,6 +3,7 @@ package wh_13_1;
 import java.util.*;
 
 public final class ReadPlayers {
+    private static final String STOP_PROGRAM = "stop";
     private static List<Player> players = new ArrayList<>();
 
     private ReadPlayers() {
@@ -11,19 +12,15 @@ public final class ReadPlayers {
     static List<Player> readFromUser() {
         Scanner sc = new Scanner(System.in);
         String readLine;
-        do {
+        while (true) {
             System.out.println("Podaj wynik kolejnego gracza <Imie Nazwisko wynik> (lub stop):");
             readLine = sc.nextLine();
-            if ("stop".equals(readLine) && players.size() == 0) {
+            if (STOP_PROGRAM.equalsIgnoreCase(readLine)) {
                 break;
-            }
-            if ("stop".equals(readLine)) {
-                continue;
             } else {
                 players = insertData(readLine);
             }
-        } while (!"stop".equals(readLine));
-
+        }
         return players;
     }
 

@@ -11,7 +11,7 @@ public final class FileOperation {
     protected FileOperation() {
     }
 
-    static void WriteCSV(String fileName, String CSV_HEADER, List<Player> players) {
+    static void writeCSV(String fileName, String CSV_HEADER, List<Player> players) {
         try (
                 var fileWriter = new FileWriter(fileName, true);
                 var writer = new BufferedWriter(fileWriter);

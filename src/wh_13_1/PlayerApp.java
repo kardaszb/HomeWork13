@@ -12,7 +12,7 @@ public class PlayerApp {
 
         playerList.sort(Player::compareTo);
         FileOperation.checkFileExist(RESULTS_FILE_NAME);
-        FileOperation.WriteCSV(RESULTS_FILE_NAME, CSV_HEADER, playerList);
+        FileOperation.writeCSV(RESULTS_FILE_NAME, CSV_HEADER, playerList);
         FileOperation.readCSV(RESULTS_FILE_NAME);
 
 
